@@ -21,8 +21,9 @@ from kd_tree_module import KDTree
 from quadtree_modulo import Quadtree
 from r_tree import RTree
 
-# Ruta local del dataset
-DATA_LOCAL_PATH = "/mnt/data/DatasetCoordenadas.csv"
+# Ruta correcta del dataset (válida en local y en Streamlit Cloud)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_LOCAL_PATH = os.path.join(BASE_DIR, "data", "DatasetCoordenadas.csv")
 
 # --------------------------
 # Inicializar session_state
@@ -1627,3 +1628,4 @@ elif estructura == "Comparación de estructuras":
 # --------------------------
 st.sidebar.markdown("---")
 st.sidebar.write("Sugerencia: cambia de estructura en la lista para probar las otras.")
+
