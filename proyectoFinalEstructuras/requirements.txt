@@ -4,5 +4,3 @@ streamlit-folium
 numpy
 pandas
 matplotlib
-geopy
-colorsys  
