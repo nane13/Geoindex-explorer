@@ -617,10 +617,6 @@ elif estructura == "Grid File":
     columnas = 20
 
     gf = GridFile(limites, rows=filas, cols=columnas)
-    #PRUEBA#
-    import inspect
-    st.code(inspect.getsource(gf.vecino_mas_cercano))
-    #PRUEBA#
     gf.construir(puntos)
 
     # Métricas
@@ -688,11 +684,6 @@ elif estructura == "Grid File":
 
         if st.button("Buscar NN (manual) — Grid File"):
             consulta = (st.session_state.lon_manual_gf, st.session_state.lat_manual_gf)
-            ##PRUEBAAAAAAAAAAAAAAA#AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA#
-            
-            resultado = gf.vecino_mas_cercano(consulta)
-            st.write("Resultado GF:", resultado, "len =", len(resultado))
-            ##PRUEBAAAAAAAAAAAAAAA#AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA#
             mejor, dist_m, celdas_v, t_elapsed, recorrido = gf.vecino_mas_cercano(consulta)
             if mejor:
                 st.session_state.resultado_manual_gf = {
@@ -1628,4 +1619,5 @@ elif estructura == "Comparación de estructuras":
 # --------------------------
 st.sidebar.markdown("---")
 st.sidebar.write("Sugerencia: cambia de estructura en la lista para probar las otras.")
+
 
